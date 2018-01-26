@@ -1,2 +1,2 @@
-aiohttp
-json
+aiohttp==2.2.5
+python-box==3.1.1
