@@ -1,13 +1,6 @@
 import re
 
 
-def platform(plat):
-    platform = plat.lower()
-    if platform not in ('xbl', 'psn', 'pc'):
-        raise ValueError('Incorrect platform passed.')
-    return platform
-
-
 first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
 
