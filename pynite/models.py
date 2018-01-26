@@ -51,29 +51,3 @@ class BaseAttrDict:
                 data, camel_killer_box=not self.client.camel_case
             )
         return self
-
-    def __getattr__(self, attr):
-        try:
-            return getattr(self._boxed_data, attr)
-        except AttributeError:
-            try:
-                return super().__getattr__(attr)
-            except AttributeError:
-                return None  # so people don't encounter random BoxErrors
-
-    def __getitem__(self, item):
-        try:
-            return getattr(self._boxed_data, item)
-        except AttributeError:
-            raise KeyError(f'No such key: {item}')
-
-    def __repr__(self):
-        _type = self.__class__.__name__
-        return f"<{_type}: {self.raw_data}>"
-
-
-class Player:
-    def get_profile(self):
-        return self.client.get_player(self.tag)
-
-    get_player = get_profile
