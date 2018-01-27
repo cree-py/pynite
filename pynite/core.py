@@ -59,32 +59,29 @@ class Client:
         data = Box(raw_data, camel_killer_box=True)
         self.platform = platform
         self.name = name
+        self.profile = Player()
 
         return data
 
     async def get_solos(self, platform, name):
-        self.profile = await self.get_player(platform, name)
         try:
             return self.profile.stats.p2
         except AttributeError:
             raise NotPlayedError('solos')
 
     async def get_duos(self, platform, name):
-        self.profile = await self.get_player(platform, name)
         try:
             return self.profile.stats.p10
         except AttributeError:
             raise NotPlayedError('duos')
 
     async def get_squads(self, platform, name):
-        self.profile = await self.get_player(platform, name)
         try:
             return self.profile.stats.p9
         except AttributeError:
             raise NotPlayedError('squads')
 
     async def get_lifetime_stats(self, platform, name):
-        self.profile = await self.get_player(platform, name)
         try:
             return self.profile.life_time_stats
         except AttributeError:
