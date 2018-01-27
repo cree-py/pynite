@@ -12,8 +12,8 @@ async def main():
     # Construct the client
     client = pynite.Client(token, timeout=5)
 
-    platform = 'pc'  # Platform can be pc, psn, or xbl
-    name = 'umbresp'  # epic games username
+    platform = 'psn'  # Platform can be pc, psn, or xbl
+    name = 'muselk'  # epic games username
 
     # Documentation about this coming soon
     player = await client.get_player(platform, name)
