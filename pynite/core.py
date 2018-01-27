@@ -59,7 +59,7 @@ class Client:
         data = Box(raw_data, camel_killer_box=True)
         self.platform = platform
         self.name = name
-        self.profile = Player()
+        self.profile = Player(data)
 
         return data
 
@@ -90,8 +90,9 @@ class Client:
 
 class Player(Client):
 
-    def __init__(self):
+    def __init__(self, data):
         super().__init__(Client)
+        self.profile = data
 
     def __repr__(self):
         return '<Player object>'
