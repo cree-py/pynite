@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pynite',
-    version='1.1.0',
+    version='1.1.1',
     description='An asynchronous Python API wrapper for the Fortnite API',
     long_description=open('README.md').read(),
     url='https://github.com/cree-py/pynite',
@@ -11,5 +11,5 @@ setup(
     license='MIT',
     keywords=['fortnite', 'pynite', 'api-wrapper', 'async'],
     packages=['pynite'],
-    install_requires=['aiohttp','python-box']
+    install_requires=['aiohttp', 'python-box']
 )
