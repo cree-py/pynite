@@ -57,6 +57,6 @@ class NotPlayedError(Exception):
 class NoKeyError(Exception):
     '''Raised when normal info about something is missing. Should never happen.'''
     
-    def __init(self, mode):
+    def __init__(self, mode):
         self.error = 'A wrapper-breaking error has just occured. Please contact us.'''
         super().__init__(self.error)
