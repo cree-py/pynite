@@ -41,9 +41,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-### Reference
+# Reference
 
-The following section contains reference material.
+## The following section contains reference material.
+
+### Client Methods
+| Method | Description | Returns |
+|--------|-------------|--------|
+| get_id(platform, epic_username) | Get player ID. | String |
+| get_player(platform, epic_username) | Get player statstics. | Player |
+| get_solos(platform, epic_username) | Get statistics for a player's solo games. | List |
+| get_duos(platform, epic_username) | Get statistics for a player's duo games. | List |
+| get_squads(platform, epic_username) | Get statistics for a player's squad games. | List |
+| get_lifetime_stats(platform, epic_username) | Get total lifetime statistics for a player. | List |
 
 More coming soon™
 
