@@ -3,16 +3,19 @@ import asyncio
 
 token = ''  # this is your api key from https://fortnitetracker.com/site-api
 # do not post this on public github repos.
+# We are not responsible for your loss
 
 
 # Async loop.
 async def main():
 
+    # Construct the client
     client = pynite.Client(token, timeout=5)
 
     platform = 'pc'  # Platform can be pc, psn, or xbl
-    name = 'sharpbit'  # epics game username
+    name = 'umbresp'  # epic games username
 
+    # Documentation about this coming soon
     player = await client.get_player(platform, name)
     solos = await player.get_solos()
     duos = await player.get_duos()
