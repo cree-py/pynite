@@ -25,7 +25,7 @@ SOFTWARE.
 
 import aiohttp
 from .utils import API
-from .errors import NotResponding, Unauthorized, NoProfileFound, NotPlayedError
+from .errors import NotResponding, Unauthorized, NoProfileFound, NotPlayedError, NoKeyError
 from box import Box
 
 
