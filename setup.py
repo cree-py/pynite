@@ -1,5 +1,5 @@
 from setuptools import setup
-
+# SharpBit told me to edit something
 setup(
     name='pynite',
     version='1.1.2',
