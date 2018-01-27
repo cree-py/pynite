@@ -59,7 +59,8 @@ class Client:
         data = Box(raw_data, camel_killer_box=True)
         self.platform = platform
         self.name = name
-        self.profile = Player(data)
+        player = Player(data)
+        self.profile = player.profile
 
         return data
 
