@@ -62,23 +62,23 @@ class Client:
         return data
 
     async def get_solos(self, platform, name):
-        profile = self.get_player(platform, name)
+        self.profile = await self.get_player(platform, name)
         try:
-            return profile.stats.p2
+            return self.profile.stats.p2
         except AttributeError:
             raise NotPlayedError('solos')
 
     async def get_duos(self, platform, name):
-        profile = self.get_player(platform, name)
+        self.profile = await self.get_player(platform, name)
         try:
-            return profile.stats.p10
+            return self.profile.stats.p10
         except AttributeError:
             raise NotPlayedError('duos')
 
     async def get_squads(self, platform, name):
-        profile = self.get_player(platform, name)
+        self.profile = await self.get_player(platform, name)
         try:
-            return profile.stats.p9
+            return self.profile.stats.p9
         except AttributeError:
             raise NotPlayedError('squads')
 
@@ -87,24 +87,23 @@ class Player(Client):
 
     def __init__(self):
         super().__init__(Client)
-        self.profile = Client.get_player(self.platform, self.name)
 
     def __repr__(self):
         return '<Player object>'
 
-    def get_solos(self):
+    async def get_solos(self):
         try:
             return self.profile.stats.p2
         except AttributeError:
             raise NotPlayedError('solos')
 
-    def get_duos(self):
+    async def get_duos(self):
         try:
             return self.profile.stats.p10
         except AttributeError:
             raise NotPlayedError('duos')
 
-    def get_squads(self):
+    async def get_squads(self):
         try:
             return self.profile.stats.p9
         except AttributeError:
