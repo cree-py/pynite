@@ -53,3 +53,10 @@ class NotPlayedError(Exception):
     def __init__(self, mode):
         self.error = f'This player has not played the {mode} gamemode yet.'
         super().__init__(self.error)
+
+class NoKeyError(Exception):
+    '''Raised when normal info about something is missing. Should never happen.'''
+    
+    def __init(self, mode):
+        self.error = 'A wrapper-breaking error has just occured. Please contact us.'''
+        super().__init__(self.error)
