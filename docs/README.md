@@ -43,7 +43,7 @@ SOFTWARE.
 
 ### Reference
 
-The following section contains reference material.\
+The following section contains reference material.
 
 More coming soon™
 
