@@ -46,8 +46,6 @@ class Client:
         token: str
             The api key you can get from
             https://fortnitetracker.com/site-api
-        session: Optional[Session]:
-            An aiohttp client session, or the default one
         timeout: Optional[int]:
             Quits requests to the API after a number of seconds. Default=10
 
@@ -70,16 +68,19 @@ class Client:
             Get total lifetime statistics for a player.
     '''
 
-    def __init__(self, token, session=None, timeout=10):
+    def __init__(self, token, timeout=10):
         self.token = token
-        self.session = session or aiohttp.ClientSession()
+        self.session = aiohttp.ClientSession()
         self.timeout = timeout
         self.headers = {
             'TRN-Api-key': token
         }
 
     def __repr__(self):
-        return '<FortniteBR-Client>'
+        return f'<FortniteBR-Client> timeout={self.timeout}>'
+
+    def __del__(self):
+        self.session.close()
 
     async def get_player(self, platform, name):
         platform = platform.lower()
@@ -136,7 +137,7 @@ class Player(Box):
     '''
 
     def __repr__(self):
-        return '<Player object>'
+        return f'<Player object name={self.epicUserHandle} id={self.accountId}>'
 
     async def get_solos(self):
         try:

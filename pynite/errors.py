@@ -23,14 +23,20 @@ SOFTWARE.
 '''
 
 
-class NotResponding(Exception):
+class BaseError(Exception):
+    '''The base class for all errors.'''
+
+
+class NotResponding(BaseError):
+    '''Raised when the Fortnite API is down.'''
+
     def __init__(self):
         self.code = 504
         self.error = 'API request timed out, please be patient.'
         super().__init__(self.error)
 
 
-class Unauthorized(Exception):
+class Unauthorized(BaseError):
     '''Raised when an invalid or blocked API key is passed'''
 
     def __init__(self):
@@ -39,7 +45,7 @@ class Unauthorized(Exception):
         super().__init__(self.error)
 
 
-class NotFound(Exception):
+class NotFound(BaseError):
     '''Raised when an invalid platform/name combo has been passed'''
 
     def __init__(self):
@@ -48,17 +54,19 @@ class NotFound(Exception):
         super().__init__(self.error)
 
 
-class NoGames(Exception):
+class NoGames(BaseError):
     '''Raised when a player has not played a certain game mode'''
 
     def __init__(self, mode):
+        self.code = 404
         self.error = f'This player has not played the {mode} gamemode yet.'
         super().__init__(self.error)
 
 
-class NoKeyError(Exception):
+class NoKeyError(BaseError):
     '''Raised when normal info about something is missing. Should never happen.'''
 
     def __init__(self, mode):
+        self.code = 404
         self.error = 'A wrapper-breaking error has just occured. Please contact us.'
         super().__init__(self.error)
