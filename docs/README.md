@@ -14,7 +14,7 @@ and
 ```pip install python-box```
 .
 
-You can update PyNite by running ```pip install -U git+https://github.com/cree-py/pynite```. The current stable version is `1.1.2`.
+You can update PyNite by running ```pip install -U git+https://github.com/cree-py/pynite```. The current stable version is `1.1.3`.
 
 PyNite requires Python 3.6 or later versions.
 
