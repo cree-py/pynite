@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pynite',
-    version='1.1.1',
+    version='1.1.2',
     description='An asynchronous Python API wrapper for the Fortnite API',
     long_description=open('README.md').read(),
     url='https://github.com/cree-py/pynite',
