@@ -45,15 +45,28 @@ SOFTWARE.
 
 ## The following section contains reference material.
 
+### Classes
+- Client
+- Player
+
 ### Client Methods
 | Method | Description | Returns |
-|--------|-------------|--------|
+|--------|-------------|---------|
 | get_id(platform, epic_username) | Get player ID. | String |
 | get_player(platform, epic_username) | Get player statstics. | Player |
 | get_solos(platform, epic_username) | Get statistics for a player's solo games. | List |
 | get_duos(platform, epic_username) | Get statistics for a player's duo games. | List |
 | get_squads(platform, epic_username) | Get statistics for a player's squad games. | List |
 | get_lifetime_stats(platform, epic_username) | Get total lifetime statistics for a player. | List |
+
+### Player Methods
+| Method | Description | Returns |
+|--------|-------------|---------|
+| get_id() | Get the player's Epic Games ID. | String
+| get_solos() | Get the player's solo stats. | List
+| get_duos() | Get the player's duo stats. | List
+| get_squads() | Get the player's squad stats. | List
+| get_lifetime_stats() | Get the player's lifetime stats. | List
 
 More coming soon™
 
