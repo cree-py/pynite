@@ -46,15 +46,14 @@ class Client:
         if platform not in ('xbl', 'psn', 'pc'):
             raise ValueError('Incorrect platform passed. Options: xbl, psn, pc')
         async with self.session.get(f'{API.PLAYER}/{platform}/{name}', headers=self.headers) as resp:
-            try:
+            if 500 > resp.status > 400:
+                raise Unauthorized()
+            elif resp.status >= 500:
+                raise NotResponding()
+            elif resp.status == 200:
                 raw_data = await resp.json()
-            except Exception as e:
-                if 500 > e.code > 400:
-                    raise Unauthorized()
-                elif e.code >= 500:
-                    raise NotResponding()
-                else:
-                    raise NoProfileFound()
+            else:
+                raise NoProfileFound()
 
         data = Box(raw_data, camel_killer_box=True)
         self.platform = platform

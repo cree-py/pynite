@@ -43,7 +43,6 @@ class NoProfileFound(Exception):
     '''Raised when an invalid platform/name combo has been passed'''
 
     def __init__(self):
-        self.code = 404
         self.error = 'No profile with this platform/name combination has been found.'
         super().__init__(self.error)
 
