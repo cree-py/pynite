@@ -1,17 +1,19 @@
 import pynite  # this is the module
+# Other required modules (should bundle with pynite in setup)
 import aiohttp
 import asyncio
 
-token = ''  # this is your api key from fortnitetracker.com/site-api
+token = ''  # this is your api key from https://fortnitetracker.com/site-api
 
 
 # Async loop.
 async def main():
 
+    # Create a client
     client = pynite.Client(token, session=aiohttp.ClientSession())
 
     platform = 'pc'  # Platform can be pc, psn, or xbl
-    name = 'sharpbit'  # epics game username
+    name = 'umbresp'  # epics game username
 
     # Get a Profile.
     profile = await client.get_player(platform, name)
