@@ -85,45 +85,11 @@ class Client:
 
     async def get_lifetime_stats(self, platform, name):
         self.profile = await self.get_player(platform, name)
-        try: 
+        try:
             return self.profile.life_time_stats
         except AttributeError:
             raise NotPlayedError('game or any of its')
-            
-    async def get_account_id(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.account_id
-        except AttributeError:
-            raise NoKeyError()
-            
-    async def get_platform_id(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.platform_id
-        except AttributeError:
-            raise NoKeyError()
-            
-    async def get_platform_name(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.platform_name
-        except AttributeError:
-            raise NoKeyError()
-            
-    async def get_long_platform_name(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.platform_name_long
-        except AttributeError:
-            raise NoKeyError()
-            
-    async def get_username(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.epic_user_handle
-        except AttributeError:
-            raise NoKeyError()
+
 
 class Player(Client):
 
@@ -134,55 +100,13 @@ class Player(Client):
         return '<Player object>'
 
     async def get_solos(self):
-        try:
-            return self.profile.stats.p2
-        except AttributeError:
-            raise NotPlayedError('solos')
+        return Client.get_solos(self.platform, self.name)
 
     async def get_duos(self):
-        try:
-            return self.profile.stats.p10
-        except AttributeError:
-            raise NotPlayedError('duos')
+        return Client.get_duos(self.platform, self.name)
 
     async def get_squads(self):
-        try:
-            return self.profile.stats.p9
-        except AttributeError:
-            raise NotPlayedError('squads')
-            
-    async def get_lifetime_stats(self):
-        try: 
-            return self.profile.life_time_stats
-        except AttributeError:
-            raise NotPlayedError('game or any of its')
-            
-    async def get_account_id(self):
-        try:
-            return self.profile.account_id
-        except AttributeError:
-            raise NoKeyError()
-            
-    async def get_platform_id(self):
-        try:
-            return self.profile.platform_id
-        except AttributeError:
-            raise NoKeyError()
-            
-    async def get_platform_name(self):
-        try:
-            return self.profile.platform_name
-        except AttributeError:
-            raise NoKeyError()
-        
-    async def get_long_platform_name(self):
-        try:
-            return self.profile.platform_name_long
-        except AttributeError:
-            raise NoKeyError()
+        return Client.get_squads(self.platform, self.name)
 
-    async def get_username(self):
-        try:
-            return self.profile.epic_user_handle
-        except AttributeError:
-            raise NoKeyError()
+    async def get_lifetime_stats(self):
+        return Client.get_lifetime_stats(self.platform, self.name)
