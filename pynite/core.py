@@ -56,6 +56,8 @@ class Client:
     Methods
     --------
 
+        get_id(platform, epic_username):
+            Get player ID.
         get_player(platform, epic_username):
             Get player statstics.
         get_solos(platform, epic_username):
@@ -102,6 +104,10 @@ class Client:
 
         return player
 
+    async def get_id(self, platform, name):
+        profile = await self.get_player(platform, name)
+        return profile.get_id()
+    
     async def get_solos(self, platform, name):
         profile = await self.get_player(platform, name)
         return profile.get_solos()
@@ -126,6 +132,8 @@ class Player(Box):
     Methods
     --------
 
+        get_id():
+            Get the player's Epic Games ID.
         get_solos():
             Get the player's solo stats.
         get_duos():
@@ -139,6 +147,12 @@ class Player(Box):
     def __repr__(self):
         return f'<Player object name={self.epicUserHandle} id={self.accountId}>'
 
+    async def get_id(self):
+        try:
+            return self.account_id
+        except AttributeError:
+            raise NoGames('')
+    
     async def get_solos(self):
         try:
             return self.stats.p2
