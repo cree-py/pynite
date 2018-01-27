@@ -39,24 +39,26 @@ class Unauthorized(Exception):
         super().__init__(self.error)
 
 
-class NoProfileFound(Exception):
+class NotFound(Exception):
     '''Raised when an invalid platform/name combo has been passed'''
 
     def __init__(self):
+        self.code = 404
         self.error = 'No profile with this platform/name combination has been found.'
         super().__init__(self.error)
 
 
-class NotPlayedError(Exception):
+class NoGames(Exception):
     '''Raised when a player has not played a certain game mode'''
 
     def __init__(self, mode):
         self.error = f'This player has not played the {mode} gamemode yet.'
         super().__init__(self.error)
 
+
 class NoKeyError(Exception):
     '''Raised when normal info about something is missing. Should never happen.'''
-    
+
     def __init__(self, mode):
-        self.error = 'A wrapper-breaking error has just occured. Please contact us.'''
+        self.error = 'A wrapper-breaking error has just occured. Please contact us.'
         super().__init__(self.error)

@@ -25,15 +25,55 @@ SOFTWARE.
 
 import aiohttp
 from .utils import API
-from .errors import NotResponding, Unauthorized, NoProfileFound, NotPlayedError, NoKeyError
+from .errors import NotResponding, Unauthorized, NotFound, NoGames
 from box import Box
+import asyncio
 
 
 class Client:
+    '''
+    The client class that starts everything. From this, you can get
+        - Full Player statistics
+        - Solo gamemode stats
+        - Duos gamemode stats
+        - Squads gamemode stats
 
-    def __init__(self, token, session=None):
+    This is an async wrapper and client.
+
+    Parameters
+    -----------
+
+        token: str
+            The api key you can get from
+            https://fortnitetracker.com/site-api
+        session: Optional[Session]:
+            An aiohttp client session, or the default one
+        timeout: Optional[int]:
+            Quits requests to the API after a number of seconds. Default=10
+
+    Example:
+
+        client = pynite.Client(os.getenv('fntoken'), session=aiohttp.ClientSession(), timeout=5)
+
+    Methods
+    --------
+
+        get_player(platform, epic_username):
+            Get player statstics.
+        get_solos(platform, epic_username):
+            Get statistics for a player's solo games.
+        get_duos(platform, epic_username):
+            Get statistics for a player's duo games.
+        get_squads(platform, epic_username):
+            Get statistics for a player's squad games.
+        get_lifetime_stats(platform, epic_username):
+            Get total lifetime statistics for a player.
+    '''
+
+    def __init__(self, token, session=None, timeout=10):
         self.token = token
         self.session = session or aiohttp.ClientSession()
+        self.timeout = timeout
         self.headers = {
             'TRN-Api-key': token
         }
@@ -45,69 +85,79 @@ class Client:
         platform = platform.lower()
         if platform not in ('xbl', 'psn', 'pc'):
             raise ValueError('Incorrect platform passed. Options: xbl, psn, pc')
-        async with self.session.get(f'http://api.fortnitetracker.com/v1/profile/{platform}/{name}', headers=self.headers) as resp:
-            if 500 > resp.status > 400:
-                print(resp.status)
-                raise Unauthorized()
-            elif resp.status >= 500:
-                raise NotResponding()
-            elif resp.status == 200:
-                raw_data = await resp.json()
-            else:
-                raise NoProfileFound()
+        try:
+            async with self.session.get(f'{API.PLAYER}/{platform}/{name}', timeout=self.timeout, headers=self.headers) as resp:
+                if 500 > resp.status > 400:
+                    raise Unauthorized()
+                elif resp.status == 200:
+                    raw_data = await resp.json()
+                else:
+                    raise NotFound()
+        except asyncio.TimeoutError:
+            raise NotResponding()
 
         data = Box(raw_data, camel_killer_box=True)
-        self.platform = platform
-        self.name = name
+        player = Player(data)
 
-        return data
+        return player
 
     async def get_solos(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.stats.p2
-        except AttributeError:
-            raise NotPlayedError('solos')
+        profile = await self.get_player(platform, name)
+        return profile.get_solos()
 
     async def get_duos(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.stats.p10
-        except AttributeError:
-            raise NotPlayedError('duos')
+        profile = await self.get_player(platform, name)
+        return profile.get_duos()
 
     async def get_squads(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.stats.p9
-        except AttributeError:
-            raise NotPlayedError('squads')
+        profile = await self.get_player(platform, name)
+        return profile.get_squads()
 
     async def get_lifetime_stats(self, platform, name):
-        self.profile = await self.get_player(platform, name)
-        try:
-            return self.profile.life_time_stats
-        except AttributeError:
-            raise NotPlayedError('game or any of its')
+        profile = await self.get_player(platform, name)
+        return profile.get_lifetime_stats()
 
 
-class Player(Client):
+class Player(Box):
+    '''Returns a full player object with all
+    of its statistics.
 
-    def __init__(self, data):
-        super().__init__(Client)
-        self.profile = data
+    Methods
+    --------
+
+        get_solos():
+            Get the player's solo stats.
+        get_duos():
+            Get the player's duo stats.
+        get_squads():
+            Get the player's squad stats.
+        get_lifetime_stats():
+            Get the player's lifetime stats.
+    '''
 
     def __repr__(self):
         return '<Player object>'
 
     async def get_solos(self):
-        return Client.get_solos(self.platform, self.name)
+        try:
+            return self.stats.p2
+        except AttributeError:
+            raise NoGames('solos')
 
     async def get_duos(self):
-        return Client.get_duos(self.platform, self.name)
+        try:
+            return self.stats.p10
+        except AttributeError:
+            raise NoGames('duos')
 
     async def get_squads(self):
-        return Client.get_squads(self.platform, self.name)
+        try:
+            return self.stats.p9
+        except AttributeError:
+            raise NoGames('squads')
 
     async def get_lifetime_stats(self):
-        return Client.get_lifetime_stats(self.platform, self.name)
+        try:
+            return self.life_time_stats
+        except AttributeError:
+            raise NoGames('the game or any of its')
