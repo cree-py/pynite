@@ -46,7 +46,7 @@ class Client:
         if platform not in ('xbl', 'psn', 'pc'):
             raise ValueError('Incorrect platform passed. Options: xbl, psn, pc')
         async with self.session.get(f'http://api.fortnitetracker.com/v1/profile/{platform}/{name}', headers=self.headers) as resp:
-            if resp.status in (400, 401, 402, 403, 404):
+            if 500 > resp.status > 400:
                 print(resp.status)
                 raise Unauthorized()
             elif resp.status >= 500:
