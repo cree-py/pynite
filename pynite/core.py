@@ -62,7 +62,7 @@ class Client:
         player = Player(data)
         self.profile = player.profile
 
-        return data
+        return self.profile
 
     async def get_solos(self, platform, name):
         try:
