@@ -33,7 +33,7 @@ from .utils import API
 ############
 
 
-__version__ = 'v.1.0.7'
+__version__ = 'v.1.0.8'
 __title__ = 'pynite'
 __license__ = 'MIT'
 __author__ = 'RBC'
