@@ -87,10 +87,10 @@ class Client:
             raise ValueError('Incorrect platform passed. Options: xbl, psn, pc')
         try:
             async with self.session.get(f'{API.PLAYER}/{platform}/{name}', timeout=self.timeout, headers=self.headers) as resp:
-                if 500 > resp.status > 400:
-                    raise Unauthorized()
-                elif resp.status == 200:
+                if resp.status == 200:
                     raw_data = await resp.json()
+                elif 500 > resp.status > 400:
+                    raise Unauthorized()
                 else:
                     raise NotFound()
         except asyncio.TimeoutError:
