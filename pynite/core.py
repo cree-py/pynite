@@ -86,42 +86,42 @@ class Client:
     async def get_lifetime_stats(self, platform, name):
         self.profile = await self.get_player(platform, name)
         try: 
-            return self.profile.lifeTimeStats
+            return self.profile.life_time_stats
         except AttributeError:
             raise NotPlayedError('game or any of its')
             
     async def get_account_id(self, platform, name):
         self.profile = await self.get_player(platform, name)
         try:
-            return self.profile.accountId
+            return self.profile.account_id
         except AttributeError:
             raise NoKeyError()
             
     async def get_platform_id(self, platform, name):
         self.profile = await self.get_player(platform, name)
         try:
-            return self.profile.platformId
+            return self.profile.platform_id
         except AttributeError:
             raise NoKeyError()
             
     async def get_platform_name(self, platform, name):
         self.profile = await self.get_player(platform, name)
         try:
-            return self.profile.platformName
+            return self.profile.platform_name
         except AttributeError:
             raise NoKeyError()
             
     async def get_long_platform_name(self, platform, name):
         self.profile = await self.get_player(platform, name)
         try:
-            return self.profile.platformNameLong
+            return self.profile.platform_name_long
         except AttributeError:
             raise NoKeyError()
             
     async def get_username(self, platform, name):
         self.profile = await self.get_player(platform, name)
         try:
-            return self.profile.epicUserHandle
+            return self.profile.epic_user_handle
         except AttributeError:
             raise NoKeyError()
 
@@ -153,36 +153,36 @@ class Player(Client):
             
     async def get_lifetime_stats(self):
         try: 
-            return self.profile.lifeTimeStats
+            return self.profile.life_time_stats
         except AttributeError:
             raise NotPlayedError('game or any of its')
             
     async def get_account_id(self):
         try:
-            return self.profile.accountId
+            return self.profile.account_id
         except AttributeError:
             raise NoKeyError()
             
     async def get_platform_id(self):
         try:
-            return self.profile.platformId
+            return self.profile.platform_id
         except AttributeError:
             raise NoKeyError()
             
     async def get_platform_name(self):
         try:
-            return self.profile.platformName
+            return self.profile.platform_name
         except AttributeError:
             raise NoKeyError()
         
     async def get_long_platform_name(self):
         try:
-            return self.profile.platformNameLong
+            return self.profile.platform_name_long
         except AttributeError:
             raise NoKeyError()
 
     async def get_username(self):
         try:
-            return self.profile.epicUserHandle
+            return self.profile.epic_user_handle
         except AttributeError:
             raise NoKeyError()
