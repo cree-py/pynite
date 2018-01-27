@@ -35,7 +35,7 @@ class Client:
         self.token = token
         self.session = session or aiohttp.ClientSession()
         self.headers = {
-            'TRN-Api-token': token
+            'TRN-Api-key': token
         }
 
     def __repr__(self):
