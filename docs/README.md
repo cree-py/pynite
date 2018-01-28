@@ -102,26 +102,27 @@ SOFTWARE.
 | player.recentMatches | Recent matches played. | MatchDict List |
 
 ### Solo
-| Name | Description | Type |
-|------|-------------|------|
-| solo.trn_rating | The Tracker Network Rating for the Player. | ValueDict |
+All Types return a `ValueDict`
+| Name | Description |
+|------|-------------|
+| solo.trn_rating | The Tracker Network Rating for the Player. |
 | solo.score | The Score for the Player. | ValueDict |
-| solo.top1 | The Victory Royales for the Player. | ValueDict |
-| solo.top3 | The number of Top 3 wins for the Player. | ValueDict |
-| solo.top5 | The number of Top 5 wins for the Player. | ValueDict |
-| solo.top6 | The number of Top 6 wins for the Player. | ValueDict |
-| solo.top10 | The number of Top 10 wins for the Player. | ValueDict |
-| solo.top12 | The number of Top 12 wins for the Player. | ValueDict |
-| solo.top25 | The number of Top 25 wins for the Player. | ValueDict |
-| solo.kd | The Kill to Death ratio in solos. | ValueDict |
-| solo.matches | The number of matches played. | ValueDict |
-| solo.kills | The number of kills the Player has. | ValueDict |
-| solo.minutes_played | The number of minutes the Player has played. | ValueDict |
-| solo.kpm | The average number of kills per minute. | ValueDict |
-| solo.kpg | The average number of kills per game. | ValueDict |
-| solo.avg_time_played | The average amount of time for each match. | ValueDict |
-| solo.score_per_match | The average score per match played | ValueDict |
-| solo.score_per_min | The average score per minute played | ValueDict |
+| solo.top1 | The Victory Royales for the Player. |
+| solo.top3 | The number of Top 3 wins for the Player. |
+| solo.top5 | The number of Top 5 wins for the Player. |
+| solo.top6 | The number of Top 6 wins for the Player. |
+| solo.top10 | The number of Top 10 wins for the Player. |
+| solo.top12 | The number of Top 12 wins for the Player. |
+| solo.top25 | The number of Top 25 wins for the Player. |
+| solo.kd | The Kill to Death ratio in solos. |
+| solo.matches | The number of matches played. |
+| solo.kills | The number of kills the Player has.
+| solo.minutes_played | The number of minutes the Player has played.
+| solo.kpm | The average number of kills per minute. |
+| solo.kpg | The average number of kills per game. |
+| solo.avg_time_played | The average amount of time for each match. |
+| solo.score_per_match | The average score per match played |
+| solo.score_per_min | The average score per minute played |
 
 ### Duo
 | Name | Description | Type |
