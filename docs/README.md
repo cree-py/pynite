@@ -124,27 +124,28 @@ All Types return a `ValueDict`
 | solo.score_per_match | The average score per match played |
 | solo.score_per_min | The average score per minute played |
 
-### Duo
-| Name | Description | Type |
-|------|-------------|------|
-| duo.trn_rating | The Tracker Network Rating for the Player. | ValueDict |
-| duo.score | The Score for the Player. | ValueDict |
-| duo.top1 | The Victory Royales for the Player. | ValueDict |
-| duo.top3 | The number of Top 3 wins for the Player. | ValueDict |
-| duo.top5 | The number of Top 5 wins for the Player. | ValueDict |
-| duo.top6 | The number of Top 6 wins for the Player. | ValueDict |
-| duo.top10 | The number of Top 10 wins for the Player. | ValueDict |
-| duo.top12 | The number of Top 12 wins for the Player. | ValueDict |
-| duo.top25 | The number of Top 25 wins for the Player. | ValueDict |
-| duo.kd | ??? | ValueDict |
-| duo.matches | The number of matches played. | ValueDict |
-| duo.kills | The number of kills the Player has. | ValueDict |
-| duo.minutes_played | The number of minutes the Player has played. | ValueDict |
-| duo.kpm | The average number of kills per minute. | ValueDict |
-| duo.kpg | The average number of kills per game. | ValueDict |
-| duo.avg_time_played | The average amount of time for each match. | ValueDict |
-| duo.score_per_match | The average score per match played | ValueDict |
-| duo.score_per_min | The average score per minute played | ValueDict |
+### Duos
+All Types return a `ValueDict`
+| Name | Description |
+|------|-------------|
+| duos.trn_rating | The Tracker Network Rating. |
+| duos.score | The Score for the Player. | ValueDict |
+| duos.top1 | The Victory Royales for the Player. |
+| duos.top3 | The number of Top 3 wins for the Player. |
+| duos.top5 | The number of Top 5 wins for the Player. |
+| duos.top6 | The number of Top 6 wins for the Player. |
+| duos.top10 | The number of Top 10 finishes. |
+| duos.top12 | The number of Top 12 finishes. |
+| duos.top25 | The number of Top 25 finishes. |
+| duos.kd | The Kill to Death ratio in duos. |
+| duos.matches | The number of matches played. |
+| duos.kills | The number of kills in Duos.
+| duos.minutes_played | The number of minutes played in Duos.
+| duos.kpm | The average number of kills per minute. |
+| duos.kpg | The average number of kills per game. |
+| duos.avg_time_played | The average amount of time for each match. |
+| duos.score_per_match | The average score per match played |
+| duos.score_per_min | The average score per minute played |
 
 ### Squad
 | Name | Description | Type |
