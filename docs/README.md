@@ -103,6 +103,15 @@ SOFTWARE.
 | solo.top10 | The number of Top 10 wins for the Player. | ValueDict |
 | solo.top12 | The number of Top 12 wins for the Player. | ValueDict |
 | solo.top25 | The number of Top 25 wins for the Player. | ValueDict |
+| solo.kd | ??? | ValueDict |
+| solo.matches | The number of matches played. | ValueDict |
+| solo.kills | The number of kills the Player has. | ValueDict |
+| solo.minutes_played | The number of minutes the Player has played. | ValueDict |
+| solo.kpm 
+| solo.kpg
+| solo.avg_time_played
+| solo.score_per_match
+| solo.score_per_min
 
 
 More coming soon™
