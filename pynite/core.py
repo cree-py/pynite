@@ -107,7 +107,7 @@ class Client:
     async def get_id(self, platform, name):
         profile = await self.get_player(platform, name)
         return profile.get_id()
-    
+
     async def get_solos(self, platform, name):
         profile = await self.get_player(platform, name)
         return profile.get_solos()
@@ -152,7 +152,7 @@ class Player(Box):
             return self.account_id
         except AttributeError:
             raise NoGames('')
-    
+
     async def get_solos(self):
         try:
             return self.stats.p2

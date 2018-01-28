@@ -1,7 +1,7 @@
 # Welcome to the pynite Docs!
 
 ### Introduction
-Welcome to PyNite™! PyNite is an asynchronous Python wrapper for the [Fortnite Tracker Network](https://fortnitetracker.com/). The wrapper is currently in progress, meaning we are **currently** developing more wrapper classes, but for now, all the data from FTN should be accessible to you, albeit in a more difficult manner.
+Welcome to PyNite™! PyNite is an asynchronous Python wrapper for the [Fortnite Tracker Network](https://fortnitetracker.com). The wrapper is currently in progress, meaning we are **currently** developing more wrapper classes, but for now, all the data from FTN should be accessible to you, albeit in a more difficult manner.
 
 ### Installation
 PyNite is available through `pip`, but not PyPI as of currently. We will publish this module to PyPI once it becomes more practical.
@@ -12,7 +12,6 @@ This should install PyNite along with its dependencies. If for some reason the d
 ```pip install aiohttp```
 and
 ```pip install python-box```
-.
 
 You can update PyNite by running ```pip install -U git+https://github.com/cree-py/pynite```. The current stable version is `1.1.2`.
 
@@ -47,7 +46,7 @@ SOFTWARE.
 
 ### Classes
 - Client extends Object
-- Player extends Client
+- Player extends Box
 
 ### Generic Objects
 | Name | Description |
@@ -55,7 +54,7 @@ SOFTWARE.
 | ValueDict | Dictionary for data values. |
 | MatchDict | Dictionary for match information. |
 
-#### ValueDict 
+#### ValueDict
 | Name | Description | Type |
 |------|-------------|------|
 | label | The name of the Dictionary. | String |
@@ -92,9 +91,9 @@ SOFTWARE.
 | Name | Description | Type |
 |------|-------------|------|
 | player.get_id() | Get the player's Epic Games ID. | String |
-| player.get_solos() | Get the player's solo stats. | Solo |
-| player.get_duos() | Get the player's duo stats. | Duo |
-| player.get_squads() | Get the player's squad stats. | Squad |
+| player.get_solos() | Get the player's solo stats. | Dict |
+| player.get_duos() | Get the player's duo stats. | Dict |
+| player.get_squads() | Get the player's squad stats. | Dict |
 | player.get_lifetime_stats() | Get the player's lifetime stats. | Dict |
 | player.platformId | The platform ID of the player. | Integer |
 | player.platformName | The platform name of the player. Can be 'pc', 'psn', or 'xbl'. | String |
@@ -102,7 +101,7 @@ SOFTWARE.
 | player.epicUserHandle | The player's name. | String |
 | player.recentMatches | Recent matches played. | MatchDict List |
 
-### Solo 
+### Solo
 | Name | Description | Type |
 |------|-------------|------|
 | solo.trn_rating | The Tracker Network Rating for the Player. | ValueDict |
@@ -114,7 +113,7 @@ SOFTWARE.
 | solo.top10 | The number of Top 10 wins for the Player. | ValueDict |
 | solo.top12 | The number of Top 12 wins for the Player. | ValueDict |
 | solo.top25 | The number of Top 25 wins for the Player. | ValueDict |
-| solo.kd | ??? | ValueDict |
+| solo.kd | The Kill to Death ratio in solos. | ValueDict |
 | solo.matches | The number of matches played. | ValueDict |
 | solo.kills | The number of kills the Player has. | ValueDict |
 | solo.minutes_played | The number of minutes the Player has played. | ValueDict |
