@@ -53,6 +53,7 @@ SOFTWARE.
 | Name | Description |
 |------|-------------|
 | ValueDict | Dictionary for data values. |
+| MatchDict | Dictionary for match information. |
 
 #### ValueDict 
 | Name | Description | Type |
@@ -67,6 +68,15 @@ SOFTWARE.
 | display_value | The Display value for the Dictionary. | String |
 
 \*Only available in some ValueDicts. Use your brain to see what seems plausible.
+
+#### MatchDict
+| Name | Description | Type |
+|------|-------------|------|
+| id | ID of the match | Integer |
+| accountId | Account ID of the player. | String |
+| playlist | The mode that was played. "p2" = solo, "p10" = duo, "p9" = squad. | String |
+| kills | The number of kills the player made in the match. | Integer |
+| minutesPlayed | How long the match took. | Integer |
 
 ### Client
 | Name | Description | Type |
@@ -90,6 +100,7 @@ SOFTWARE.
 | player.platformName | The platform name of the player. Can be 'pc', 'psn', or 'xbl'. | String |
 | player.platformNameLong | The long platform name of the player. | String |
 | player.epicUserHandle | The player's name. | String |
+| player.recentMatches | Recent matches played. | MatchDict List |
 
 ### Solo 
 | Name | Description | Type |
