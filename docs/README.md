@@ -54,7 +54,7 @@ SOFTWARE.
 |------|-------------|
 | ValueDict | Dictionary for data values. |
 
-#### ValueDict Variables
+#### ValueDict 
 | Name | Description | Type |
 |------|-------------|------|
 | label | The name of the Dictionary. | String |
@@ -68,8 +68,8 @@ SOFTWARE.
 
 \*Only available in some ValueDicts. Use your brain to see what seems plausible.
 
-### Client Methods
-| Method | Description | Returns |
+### Client
+| Name | Description | Type |
 |--------|-------------|---------|
 | client.get_id(platform, epic_username) | Get player ID. | String |
 | client.get_player(platform, epic_username) | Get player statstics. | Player |
@@ -78,18 +78,14 @@ SOFTWARE.
 | client.get_squads(platform, epic_username) | Get statistics for a player's squad games. | Squad |
 | client.get_lifetime_stats(platform, epic_username) | Get total lifetime statistics for a player. | Dict |
 
-### Player Methods
-| Method | Description | Returns |
+### Player
+| Name | Description | Type |
 |--------|-------------|---------|
 | player.get_id() | Get the player's Epic Games ID. | String |
 | player.get_solos() | Get the player's solo stats. | Solo |
 | player.get_duos() | Get the player's duo stats. | Duo |
 | player.get_squads() | Get the player's squad stats. | Squad |
 | player.get_lifetime_stats() | Get the player's lifetime stats. | Dict |
-
-### Player Variables
-| Variable | Description | Type |
-|----------|-------------|------|
 | player.platformId | The platform ID of the player. | Integer |
 | player.platformName | The platform name of the player. Can be 'pc', 'psn', or 'xbl'. | String |
 | player.platformNameLong | The long platform name of the player. | String |
