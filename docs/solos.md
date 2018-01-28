@@ -1,9 +1,9 @@
 ### Solo
-All Types return a `ValueDict`
+All Types return a [ValueDict](https://github.com/cree-py/pynite/blob/master/docs/main.md#valuedict)
 | Name | Description |
 |------|-------------|
 | solo.trn_rating | The Tracker Network Rating finishes. |
-| solo.score | The Score finishes. | ValueDict |
+| solo.score | The Score finishes. |
 | solo.top1 | The Victory Royales finishes. |
 | solo.top3 | The number of Top 3 wins finishes. |
 | solo.top5 | The number of Top 5 wins finishes. |

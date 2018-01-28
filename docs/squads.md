@@ -1,5 +1,5 @@
 ### Squads
-All Types return a `ValueDict`
+All Types return a [ValueDict](https://github.com/cree-py/pynite/blob/master/docs/main.md#valuedict)
 | Name | Description |
 |------|-------------|
 | squads.trn_rating | The Tracker Network Rating. |
