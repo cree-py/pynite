@@ -70,7 +70,7 @@ SOFTWARE.
 
 ### Client
 | Name | Description | Type |
-|--------|-------------|---------|
+|------|-------------|------|
 | client.get_id(platform, epic_username) | Get player ID. | String |
 | client.get_player(platform, epic_username) | Get player statstics. | Player |
 | client.get_solos(platform, epic_username) | Get statistics for a player's solo games. | Solo |
@@ -80,7 +80,7 @@ SOFTWARE.
 
 ### Player
 | Name | Description | Type |
-|--------|-------------|---------|
+|------|-------------|------|
 | player.get_id() | Get the player's Epic Games ID. | String |
 | player.get_solos() | Get the player's solo stats. | Solo |
 | player.get_duos() | Get the player's duo stats. | Duo |
@@ -91,12 +91,18 @@ SOFTWARE.
 | player.platformNameLong | The long platform name of the player. | String |
 | player.epicUserHandle | The player's name. | String |
 
-### Solo Variables
-| Variable | Description | Type |
-|----------|-------------|------|
+### Solo 
+| Name | Description | Type |
+|------|-------------|------|
 | solo.trn_rating | The Tracker Network Rating for the Player. | ValueDict |
 | solo.score | The Score for the Player. | ValueDict |
 | solo.top1 | The Victory Royales for the Player. | ValueDict |
+| solo.top3 | The number of Top 3 wins for the Player. | ValueDict |
+| solo.top5 | The number of Top 5 wins for the Player. | ValueDict |
+| solo.top6 | The number of Top 6 wins for the Player. | ValueDict |
+| solo.top10 | The number of Top 10 wins for the Player. | ValueDict |
+| solo.top12 | The number of Top 12 wins for the Player. | ValueDict |
+| solo.top25 | The number of Top 25 wins for the Player. | ValueDict |
 
 
 More coming soon™
