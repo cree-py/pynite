@@ -65,6 +65,7 @@ SOFTWARE.
 | value | The value of the Dictionary. | String |
 | percentile* | The percentile of the value of the Dictionary. | Float |
 | display_value | The Display value for the Dictionary. | String |
+
 \*Only available in some ValueDicts. Use your brain to see what seems plausible.
 
 ### Client Methods
