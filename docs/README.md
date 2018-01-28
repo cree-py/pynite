@@ -135,6 +135,28 @@ SOFTWARE.
 | duo.score_per_match | The average score per match played | ValueDict |
 | duo.score_per_min | The average score per minute played | ValueDict |
 
+### Squad
+| Name | Description | Type |
+|------|-------------|------|
+| squad.trn_rating | The Tracker Network Rating for the Player. | ValueDict |
+| squad.score | The Score for the Player. | ValueDict |
+| squad.top1 | The Victory Royales for the Player. | ValueDict |
+| squad.top3 | The number of Top 3 wins for the Player. | ValueDict |
+| squad.top5 | The number of Top 5 wins for the Player. | ValueDict |
+| squad.top6 | The number of Top 6 wins for the Player. | ValueDict |
+| squad.top10 | The number of Top 10 wins for the Player. | ValueDict |
+| squad.top12 | The number of Top 12 wins for the Player. | ValueDict |
+| squad.top25 | The number of Top 25 wins for the Player. | ValueDict |
+| squad.kd | ??? | ValueDict |
+| squad.matches | The number of matches played. | ValueDict |
+| squad.kills | The number of kills the Player has. | ValueDict |
+| squad.minutes_played | The number of minutes the Player has played. | ValueDict |
+| squad.kpm | The average number of kills per minute. | ValueDict |
+| squad.kpg | The average number of kills per game. | ValueDict |
+| squad.avg_time_played | The average amount of time for each match. | ValueDict |
+| squad.score_per_match | The average score per match played | ValueDict |
+| squad.score_per_min | The average score per minute played | ValueDict |
+
 More coming soon™
 
 ### Help
