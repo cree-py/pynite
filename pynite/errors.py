@@ -25,8 +25,10 @@ SOFTWARE.
 
 class BaseError(Exception):
     '''The base class for all errors.'''
+
     def __init__(self):
         pass
+
 
 class NotResponding(BaseError):
     '''Raised when the Fortnite API is down.'''
