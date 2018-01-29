@@ -1,9 +1,5 @@
 # pynite
 An async python wrapper for the Fortnite API.
-### Credits
-Made by: [SharpBit](https://github.com/SharpBit) with [Victini](https://github.com/umbresp) and 4jr's help. <br />
-Tables and Value/MatchDicts in docs- Umbresp/Victini<br />
-Idea: SharpBit- to let others easily use the Fortnite API
 
 #### Installation
 Type this into your console:
