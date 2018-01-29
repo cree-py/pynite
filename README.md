@@ -12,4 +12,4 @@ If you come across an unknown error or bug, please [open an issue](https://githu
 #### Documentation
 Documentation is coming soon! If you would like to contribute, let us know by joining our [discord server](https://discord.gg/RzsYQ9f).
 #### Misc
-This is an async python wrapper for the fortnite API. If you would like to help, jsut let us know [here](https://discord.gg/RzsYQ9f)!
+This is an async python wrapper for the fortnite API. If you would like to help, just let us know [here](https://discord.gg/RzsYQ9f)!
