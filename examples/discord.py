@@ -5,12 +5,12 @@ import pynite
 class Fortnite:
     '''Example cog for a Discord bot made through the discord.py ext.commands framework.'''
 
-    # Constructor
+
     def __init__(self, bot):
         self.bot = bot
         self.client = pynite.Client('insert your token here', timeout=5)
 
-    # Create a command
+    
     @commands.command()
     async def profile(self, ctx, platform, name):
         '''Fetch a profile.'''
