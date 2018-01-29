@@ -8,7 +8,7 @@ setup(
     author='SharpBit and Umbresp',
     author_email='creepy.org3301@gmail.com',
     license='MIT',
-    keywords=['fortnite, pynite ,api-wrapper, async'],
+    keywords=['fortnite pynite api-wrapper async'],
     packages=find_packages(),
     install_requires=['aiohttp', 'python-box']
 )
