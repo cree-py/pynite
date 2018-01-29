@@ -1,5 +1,5 @@
 from setuptools import setup
-# SharpBit told me to edit something
+
 setup(
     name='pynite',
     version='1.1.2',
@@ -11,5 +11,5 @@ setup(
     license='MIT',
     keywords=['fortnite', 'pynite', 'api-wrapper', 'async'],
     packages=['pynite'],
-    install_requires=['aiohttp', 'python-box']
+    install_requires=['aiohttp==2.2.5', 'python-box==3.1.1']
 )
