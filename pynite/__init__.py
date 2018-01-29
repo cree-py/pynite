@@ -36,5 +36,5 @@ from .utils import API
 __version__ = 'v.1.1.4'
 __title__ = 'pynite'
 __license__ = 'MIT'
-__author__ = 'SharpBit'
+__author__ = 'SharpBit & Umbresp (But mostly SharpBit)'
 __github__ = 'https://github.com/cree-py/pynite'
