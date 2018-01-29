@@ -66,10 +66,10 @@ class NoGames(BaseError):
         super().__init__(self.error)
 
 
-class NoKeyError(BaseError):
+# class NoKeyError(BaseError):
     '''Raised when normal info about something is missing. Should never happen.'''
 
-    def __init__(self, mode):
-        self.code = 404
-        self.error = 'A wrapper-breaking error has just occured. Please contact us.'
-        super().__init__(self.error)
+    # def __init__(self, mode):
+        # self.code = 404
+        # self.error = 'A wrapper-breaking error has just occured. Please contact us.'
+        # super().__init__(self.error)
