@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 # SharpBit told me to edit something
 setup(
     name='pynite',
-    version='1.1.2',
+    version='1.1.3',
     description='An asynchronous Python API wrapper for the Fortnite API',
     long_description="Asynchronous python wrapper for the Fortnite API. Also, we don't yet have a good description so this empty page will have to do.",
     url='https://github.com/cree-py/pynite',

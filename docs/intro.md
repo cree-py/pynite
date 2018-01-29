@@ -6,14 +6,14 @@ Welcome to PyNite™! PyNite is an asynchronous Python wrapper for the [Fortnite
 ### Installation
 PyNite is available through `pip`, but not PyPI as of currently. We will publish this module to PyPI once it becomes more practical.
 #### To install:
-```pip install git+https://github.com/cree-py/pynite```
+```pip install pynite```
 
 This should install PyNite along with its dependencies. If for some reason the dependencies are not installed, PyNite will not work correctly. You can manually install the dependencies through
 ```pip install aiohttp```
 and
 ```pip install python-box```
 
-You can update PyNite by running ```pip install -U git+https://github.com/cree-py/pynite```. The current stable version is `1.1.2`.
+You can update PyNite by running ```pip install -U pynite```. The current stable version is `1.1.3`.
 
 PyNite requires Python 3.6 or later versions.
 
