@@ -4,7 +4,7 @@
 Welcome to PyNite™! PyNite is an asynchronous Python wrapper for the [Fortnite Tracker Network](https://fortnitetracker.com). The wrapper is currently in progress, meaning we are **currently** developing more wrapper classes, but for now, all the data from FTN should be accessible to you, albeit in a more difficult manner.
 
 ### Installation
-PyNite is available through `pip`, but not PyPI as of currently. We will publish this module to PyPI once it becomes more practical.
+PyNite is available through `pip`.
 #### To install:
 ```pip install pynite```
 
@@ -13,7 +13,7 @@ This should install PyNite along with its dependencies. If for some reason the d
 and
 ```pip install python-box```
 
-You can update PyNite by running ```pip install -U pynite```. The current stable version is `1.1.4`.
+You can update PyNite by running ```pip install -U pynite```. The current stable version is `1.1.5`.
 
 PyNite requires Python 3.6 or later versions.
 
