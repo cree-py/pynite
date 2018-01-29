@@ -1,5 +1,5 @@
 # pynite
-WIP async python wrapper for the Fortnite API.
+An async python wrapper for the Fortnite API.
 
 #### Installation
 Type this into your console:
