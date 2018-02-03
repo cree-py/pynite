@@ -148,6 +148,6 @@ class Player(Box):
 
     async def get_lifetime_stats(self):
         try:
-            return self.lifeTimeStats
+            return self.life_time_stats
         except AttributeError:
             raise NoGames('the game or any of its')

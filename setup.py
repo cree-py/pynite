@@ -1,9 +1,13 @@
 from setuptools import setup, find_packages
+
+with open("README.md", "r") as readme_file:
+    long_description = readme_file.read()
+
 setup(
     name='pynite',
-    version='1.1.6',
+    version='1.1.7',
     description='An async Python API wrapper for the Fortnite API',
-    long_description="async python wrapper for the Fortnite API. Also, we don't yet have a good description so this empty page will have to do.",
+    long_description=long_description,
     url='https://github.com/cree-py/pynite',
     author='SharpBit & Umbresp',
     author_email='creepy.org3301@gmail.com',

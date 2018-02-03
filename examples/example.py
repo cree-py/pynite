@@ -36,9 +36,7 @@ async def main():
     squads = await player.get_squads()
     lifetime = await player.get_lifetime_stats()
 
-    # Currently player attributes are in camelCase
-    # All solos, duos, and squad attributes are in snake_case
-    print(player.accountId)  # prints account id
+    print(player.account_id)  # prints account id
     print(solos.kills.value)  # prints the number of kills you have in solos
     print(duos.avg_time_played.display_value)
     print(squads.top3.value)
