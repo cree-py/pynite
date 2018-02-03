@@ -1,4 +1,4 @@
-import pynite  # this is the module
+import pynite  # This is the module
 import asyncio
 
 token = ''
@@ -9,18 +9,20 @@ We are not responsible if it gets blocked due to someone abusing it.
 
 Examples:
 ----------
-
+    ```
     os.getenv('fntoken')
+    ```
 
+    ```
     with open('config.json') as f:
         config = json.load(f)
         token = config.get('fntoken')
+    ```
 
 Or come up with your own way!
 '''
 
 
-# Async loop.
 async def main():
 
     client = pynite.Client(token, timeout=5)
@@ -32,14 +34,16 @@ async def main():
     solos = await player.get_solos()
     duos = await player.get_duos()
     squads = await player.get_squads()
+    lifetime = await player.get_lifetime_stats()
 
-    # currently player attributes are in camelCase
-    # all solos, duos, and squad attributes are in snake_case
+    # Currently player attributes are in camelCase
+    # All solos, duos, and squad attributes are in snake_case
     print(player.accountId)  # prints account id
     print(solos.kills.value)  # prints the number of kills you have in solos
     print(duos.avg_time_played.display_value)
     print(squads.top3.value)
+    print(lifetime[10].key + ': ' + lifetime[10].value)
+    # prints the number of kills you have
 
-# Run the async loop!
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())

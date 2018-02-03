@@ -30,3 +30,9 @@
 | playlist | The mode that was played. `p2` = solo, `p10` = duo, `p9` = squad. | String |
 | kills | The number of kills in the match. | Integer |
 | minutesPlayed | How long the match took. | Integer |
+
+#### LifetimeDict
+| Attribute | Value |
+|-----------|-------|
+| lifetime.key | What the `lifetime.value` is representing. |
+| lifetime.value | The value that represents `lifetime.key` |

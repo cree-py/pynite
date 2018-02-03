@@ -26,7 +26,7 @@ class Client:
 
     Example:
 
-        client = pynite.Client(os.getenv('fntoken'), session=aiohttp.ClientSession(), timeout=5)
+        client = pynite.Client(os.getenv('fntoken'), timeout=5)
 
     Methods
     --------
@@ -54,7 +54,7 @@ class Client:
         }
 
     def __repr__(self):
-        return f'<FortniteBR-Client> timeout={self.timeout}>'
+        return f'<FortniteBR-Client timeout={self.timeout}>'
 
     def __del__(self):
         self.session.close()
@@ -75,7 +75,7 @@ class Client:
             raise NotResponding()
 
         data = Box(raw_data, camel_killer_box=True)
-        player = Player(data)
+        player = Player(data, camel_killer_box=True)
 
         return player
 

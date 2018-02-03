@@ -2,10 +2,11 @@ import discord
 from discord.ext import commands
 import pynite
 
+
 class Fortnite:
     '''
     Example cog for a Discord bot made through the discord.py ext.commands framework.
-    
+
     Requirements
     --------------
         discord.py rewrite
