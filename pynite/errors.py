@@ -41,8 +41,8 @@ class NoGames(BaseError):
         super().__init__(self.error)
 
 
-class NoKeyError(BaseError):
-    '''Raised when normal info about something is missing. Should never happen.'''
+class UnkownError(BaseError):
+    '''Raised when an unknown case or error has occured.'''
 
     def __init__(self, mode):
         self.code = 404

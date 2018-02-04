@@ -5,7 +5,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name='pynite',
-    version='1.1.7',
+    version='1.1.8',
     description='An async Python API wrapper for the Fortnite API',
     long_description=long_description,
     url='https://github.com/cree-py/pynite',
