@@ -67,11 +67,7 @@ class Client:
             async with self.session.get(f'{API.PLAYER}/{platform}/{name}', timeout=self.timeout, headers=self.headers) as resp:
                 if resp.status == 200:
                     raw_data = await resp.json()
-                    try:
-                        raw_data['error']
-                    except KeyError:
-                        pass
-                    else:
+                    if raw_data.get('error'):
                         raise NotFound()
                 elif 500 > resp.status > 400:
                     raise Unauthorized()
