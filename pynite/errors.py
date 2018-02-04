@@ -1,7 +1,7 @@
 class BaseError(Exception):
     '''The base class for all errors.'''
 
-    def __init__(self):
+    def __init__(self, code, error):
         pass
 
 
@@ -11,7 +11,7 @@ class NotResponding(BaseError):
     def __init__(self):
         self.code = 504
         self.error = 'API request timed out, please be patient.'
-        super().__init__(self.error)
+        super().__init__(self.code, self.error)
 
 
 class Unauthorized(BaseError):
@@ -20,7 +20,7 @@ class Unauthorized(BaseError):
     def __init__(self):
         self.code = 401
         self.error = 'Invalid API key.'
-        super().__init__(self.error)
+        super().__init__(self.code, self.error)
 
 
 class NotFound(BaseError):
@@ -29,7 +29,7 @@ class NotFound(BaseError):
     def __init__(self):
         self.code = 404
         self.error = 'No profile with this platform/name combination has been found.'
-        super().__init__(self.error)
+        super().__init__(self.code, self.error)
 
 
 class NoGames(BaseError):
@@ -38,7 +38,7 @@ class NoGames(BaseError):
     def __init__(self, mode):
         self.code = 404
         self.error = f'This player has not played the {mode} gamemode yet.'
-        super().__init__(self.error)
+        super().__init__(self.code, self.error)
 
 
 class UnkownError(BaseError):
@@ -47,4 +47,4 @@ class UnkownError(BaseError):
     def __init__(self, mode):
         self.code = 404
         self.error = 'A wrapper-breaking error has just occured. Please contact us.'
-        super().__init__(self.error)
+        super().__init__(self.code, self.error)
