@@ -41,7 +41,7 @@ class NoGames(BaseError):
         super().__init__(self.code, self.error)
 
 
-class UnkownError(BaseError):
+class UnknownError(BaseError):
     '''Raised when an unknown case or error has occured.'''
 
     def __init__(self, mode):
