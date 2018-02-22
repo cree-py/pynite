@@ -10,13 +10,13 @@ class Fortnite:
     Requirements
     --------------
         discord.py rewrite
-        python 3.6+
-        pynite v1.1.2+
+        python 3.5+
+        pynite v1.3.0+
     '''
 
     def __init__(self, bot):
         self.bot = bot
-        self.client = pynite.Client('insert your token here', timeout=5)
+        self.client = pynite.Client('token', timeout=5)
 
     @commands.command()
     async def profile(self, ctx, platform, name):
