@@ -25,7 +25,7 @@ class Fortnite:
         player = await self.client.get_player(platform, name)
         solos = await player.get_solos()
 
-        await ctx.send(f"# of kills in solos for {name}: {solos.kills.value}")
+        await ctx.send("# of kills in solos for {}: {}".format(name,solos.kills.value))
 
 
 def setup(bot):
