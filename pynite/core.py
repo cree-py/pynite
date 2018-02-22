@@ -122,13 +122,13 @@ class Player(Box):
     '''
 
     def __repr__(self):
-        return '<Player object name={} id={}>'.format(self.epicUserHandle, self.accountId)
+        return '<Player object name={} id={}>'.format(self.epic_user_handle, self.account_id)
 
     async def get_id(self):
         try:
-            return self.account_id
-        except AttributeError:
-            raise NoGames('')
+        return self.account_id
+
+
 
     async def get_solos(self):
         try:
