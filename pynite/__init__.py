@@ -8,7 +8,7 @@ from .utils import API
 ############
 
 
-__version__ = 'v.1.4.1'
+__version__ = 'v.1.4.2'
 __title__ = 'pynite'
 __license__ = 'MIT'
 __author__ = 'SharpBit & Umbresp'
