@@ -12,9 +12,9 @@ pip install pynite
 This should install PyNite along with its dependencies. If for some reason the dependencies are not installed, PyNite will not work correctly. You can manually install the dependencies through
 `pip install aiohttp` and `pip install python-box`
 
-You can update pynite by running ```pip install -U pynite```. The current stable version is `1.2.0`.
+You can update pynite by running ```pip install -U pynite```. The current stable version is `1.4.0`.
 
-PyNite requires Python 3.6 or later versions.
+PyNite requires Python 3.5 or later versions.
 
 ### Legal
 ```
