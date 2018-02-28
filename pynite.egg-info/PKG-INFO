@@ -1,12 +1,11 @@
 Metadata-Version: 1.0
 Name: pynite
-Version: 1.4.0
+Version: 1.4.1
 Summary: An async Python API wrapper for the Fortnite API
 Home-page: https://github.com/cree-py/pynite
 Author: SharpBit & Umbresp
 Author-email: creepy.org3301@gmail.com
 License: MIT
 Description: Powered by fortnitetracker.com. Async python 3.5+
-
 Keywords: fortnite, pynite, api-wrapper, async
 Platform: UNKNOWN
