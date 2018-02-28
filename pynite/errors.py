@@ -31,17 +31,16 @@ class NotFound(BaseError):
         self.error = 'No profile with this platform/name combination has been found.'
         super().__init__(self.code, self.error)
 
-
 class NoGames(BaseError):
     '''Raised when a player has not played a certain game mode'''
 
     def __init__(self, mode):
         self.code = 404
-        self.error = f'This player has not played the {mode} gamemode yet.'
+        self.error = 'This player has not played the {} gamemode yet.'.format(mode)
         super().__init__(self.code, self.error)
 
 
-class UnkownError(BaseError):
+class UnknownError(BaseError):
     '''Raised when an unknown case or error has occured.'''
 
     def __init__(self, mode):

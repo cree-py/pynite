@@ -54,7 +54,7 @@ class Client:
         }
 
     def __repr__(self):
-        return f'<FortniteBR-Client timeout={self.timeout}>'
+        return '<FortniteBR-Client timeout={}>'.format(self.timeout)
 
     def __del__(self):
         self.session.close()
@@ -64,7 +64,7 @@ class Client:
         if platform not in ('xbl', 'psn', 'pc'):
             raise ValueError('Incorrect platform passed. Options: xbl, psn, pc')
         try:
-            async with self.session.get(f'{API.PLAYER}/{platform}/{name}', timeout=self.timeout, headers=self.headers) as resp:
+            async with self.session.get('{}/{}/{}'.format(API.PLAYER,platform,name), timeout=self.timeout, headers=self.headers) as resp:
                 if resp.status == 200:
                     raw_data = await resp.json()
                     if raw_data.get('error'):
@@ -122,13 +122,13 @@ class Player(Box):
     '''
 
     def __repr__(self):
-        return f'<Player object name={self.epicUserHandle} id={self.accountId}>'
+        return '<Player object name={} id={}>'.format(self.epic_user_handle, self.account_id)
 
     async def get_id(self):
         try:
-            return self.account_id
-        except AttributeError:
-            raise NoGames('')
+        return self.account_id
+
+
 
     async def get_solos(self):
         try:
