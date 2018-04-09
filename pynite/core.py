@@ -56,8 +56,11 @@ class Client:
     def __repr__(self):
         return '<FortniteBR-Client timeout={}>'.format(self.timeout)
     
-    async def close(self):
-        await self.session.close()
+    def __del__(self):
+        if not self.session.closed:
+            if self.session._connector_owner:
+                self.session._connector.close()
+            self.session._connector = None
         
     async def get_player(self, platform, name):
         platform = platform.lower()
