@@ -55,10 +55,13 @@ class Client:
 
     def __repr__(self):
         return '<FortniteBR-Client timeout={}>'.format(self.timeout)
-
+    
     def __del__(self):
-        self.session.close()
-
+        if not self.session.closed:
+            if self.session._connector_owner:
+                self.session._connector.close()
+            self.session._connector = None
+        
     async def get_player(self, platform, name):
         platform = platform.lower()
         if platform not in ('xbl', 'psn', 'pc'):
@@ -78,7 +81,7 @@ class Client:
 
         data = Box(raw_data, camel_killer_box=True)
         player = Player(data, camel_killer_box=True)
-
+        
         return player
 
     async def get_id(self, platform, name):
